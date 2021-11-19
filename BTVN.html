@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num < 3) {
+            return false
+        } else {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+    function creatArray() {
+        let arrayPrime = []
+        let count = 0
+        for (let i = 0; i < 8; i++) {
+            let number = +prompt("Nhập vào 1 số bất kỳ (SNT): ")
+            if (isPrime(number)) {
+                arrayPrime.push(number)
+                if (arrayPrime.length === 5) {
+                    return arrayPrime
+                }
+            } else {
+                count++
+            }
+            if (count === 4) {
+                return new Array(0)
+            }
+        }
+    }
+
+    console.log(creatArray())
+</script>
+</body>
+</html>

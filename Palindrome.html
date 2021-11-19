@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập")
+    let arr = string.split("")
+
+    //Đảo mảng - so sánh 2 mảng
+    // if (arr.join() === arr.reverse().join()) {
+    //     alert("Đúng")
+    // } else {
+    //     alert("Sai")
+    // }
+
+    //sử dụng vòng lặp
+    // let check = true
+    // for (let i = 0; i < arr.length / 2; i++) {
+    //     if (arr[i] !== arr[arr.length - 1 - i]) {
+    //         check = false
+    //         break
+    //     }
+    // }
+    // if (check) {
+    //     alert("Đúng")
+    // } else {
+    //     alert("Sai")
+    // }
+
+    //đệ quy
+    let count = 0
+
+    function check(arr, count) {
+        if (arr[count] !== arr[arr.length - 1 - count]) {
+            return "Không là chuỗi"
+        } else if (count <= arr.length / 2) {
+            return check(arr, ++count)
+        }
+        return "Là chuỗi"
+    }
+
+    alert(check(arr, count))
+</script>
+</body>
+</html>
